@@ -1,0 +1,11 @@
+#set( $username = $!{username} )
+#set( $url = $!{url} )
+
+Hello, <p style="color: red">$username!</p>
+
+Welcome to our platform. Please click the following link to activate your account:
+
+<p style="color: red">$url</p>
+
+Thanks,
+The Team

@@ -2,8 +2,10 @@ import { Module } from '@nestjs/common';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
-import { EmailService } from './email.service';
-import { EmailController } from './email.controller';
+import { UploadController } from './upload/upload.controller';
+import { UploadService } from './upload/upload.service';
+import { EmailService } from './email/email.service';
+import { EmailController } from './email/email.controller';
 
 @Module({
   imports: [
@@ -13,7 +15,7 @@ import { EmailController } from './email.controller';
         port: 465, // 一般是 587 或 465
         auth: {
           user: 'wygdancer@aliyun.com', // 替换为你的邮件账户
-          pass: 'Wang3.12415926', // 替换为你的邮件密码
+          pass: 'XXXXXX', // 替换为你的邮件密码
         },
       },
       defaults: {
@@ -21,7 +23,7 @@ import { EmailController } from './email.controller';
       },
     }),
   ],
-  providers: [AppService, EmailService],
-  controllers: [AppController, EmailController],
+  providers: [AppService, EmailService, UploadService],
+  controllers: [AppController, EmailController, UploadController],
 })
 export class AppModule {}
